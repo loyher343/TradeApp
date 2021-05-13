@@ -3,3 +3,4 @@ __pycache__
 .schema
 app.db
 config.py
+venv37
