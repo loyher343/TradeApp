@@ -1,7 +1,6 @@
 import sqlite3
 from sqlite3.dbapi2 import Cursor
 
-from starlette.responses import RedirectResponse
 from config import *
 from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
@@ -81,7 +80,7 @@ def apply_strategy(strategy_id: int = Form(...), stock_id: int = Form(...)):
     """, (stock_id, strategy_id))
     
     connection.commit()
-    
+
     return RedirectResponse(url=f"/strategy/{strategy_id}", status_code=303)
 
 
